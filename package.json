@@ -1,0 +1,23 @@
+{
+  "name": "courses-management-ps",
+  "version": "1.0.0",
+  "description": "Plurasight react tutorial to manage courses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llabake/Courses-Management-PS.git"
+  },
+  "keywords": [
+    "React",
+    "Javascript"
+  ],
+  "author": "Lemboye Labake",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llabake/Courses-Management-PS/issues"
+  },
+  "homepage": "https://github.com/llabake/Courses-Management-PS#readme"
+}
