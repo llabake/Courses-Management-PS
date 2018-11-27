@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <div className="container-fluid">
-        <Header loading={this.props.loading}/>
+        <Header loading={this.props.loading} />
         {this.props.children}
       </div>
     );
@@ -20,11 +20,9 @@ App.propTypes = {
   loading: PropTypes.bool.isRequired,
 };
 
-export const mapStateToProps = state => {
-  return {
-    loading: state.ajaxCallsInProgress > 0,
-  };
-};
+export const mapStateToProps = state => ({
+  loading: state.ajaxCallsInProgress > 0,
+});
 
 // export default App;
 export default connect(mapStateToProps)(App);

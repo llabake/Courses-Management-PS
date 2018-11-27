@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LoadingDots from "./LoadingDots";
 import { bool } from "prop-types";
+import LoadingDots from "./LoadingDots";
 
 // const Header = () => (
 //   <nav>

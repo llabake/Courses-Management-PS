@@ -33,20 +33,21 @@ export class ManageCoursePage extends Component {
     return this.setState({ course });
   };
 
-  redirect () {
+  redirect() {
     this.setState({ saving: false });
     toastr.success("Course saved successfully");
     this.props.history.push('/courses');
   }
+
   saveCourse = (event) => {
     event.preventDefault();
     this.setState({ saving: true });
     this.props.saveCourse(this.state.course)
       .then(() => this.redirect())
-      .catch(error => {
+      .catch((error) => {
         toastr.error(error);
         this.setState({ saving: false });
-      })
+      });
   };
 
   render() {
