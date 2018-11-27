@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import toastr from "toastr";
-import { deleteCourse, loadCourses, saveCourse } from '../../actions/courseActions';
+import { deleteCourse } from '../../actions/courseActions';
 import CourseList from './CourseList';
 
 class CoursesPage extends Component {
@@ -21,10 +21,9 @@ class CoursesPage extends Component {
     history.push('/course');
   };
 
-  deleteCourse = () => {
+  deleteCourse = (courseId) => {
     const { history } = this.props;
-    const { course } = this.state;
-    this.props.deleteCourse(course.id).then(() => {
+    this.props.deleteCourse(courseId).then(() => {
       toastr.success('Course deleted successfully');
       history.push('/courses');
     });
@@ -52,7 +51,6 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  // createCourse: course => dispatch(courseActions(course)),
   deleteCourse: course => dispatch(deleteCourse(course)),
 });
 

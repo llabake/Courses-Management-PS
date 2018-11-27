@@ -27,6 +27,7 @@ Delete
 
 CourseListRow.propTypes = {
   course: PropTypes.object.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default CourseListRow;

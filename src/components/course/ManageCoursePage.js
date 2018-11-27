@@ -7,7 +7,7 @@ import {
   arrayOf,
   func,
 } from 'prop-types';
-import { loadCourses, saveCourse } from '../../actions/courseActions';
+import { saveCourse } from '../../actions/courseActions';
 import CourseForm from "./CourseForm";
 
 export class ManageCoursePage extends Component {
@@ -95,7 +95,6 @@ export const mapStateToProps = (state, { match: { params } }) => {
 };
 
 export const mapDispatchToProps = dispatch => ({
-  loadCourses: () => dispatch(loadCourses()),
   saveCourse: course => dispatch(saveCourse(course)),
 });
 

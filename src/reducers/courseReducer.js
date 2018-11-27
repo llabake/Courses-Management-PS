@@ -15,9 +15,7 @@ export default function courseReducer(state = initialState.courses, action) {
         action.course,
       ];
     case types.DELETE_COURSE_SUCCESS:
-      // eslint-disable-next-line no-case-declarations
-      const courses = state.filter(course => course.id !== action.courseId);
-      return [...state, courses];
+      return [...state.filter(course => course.id !== action.courseId)];
     default:
       return state;
   }

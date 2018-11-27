@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
+import { withRouter } from 'react-router-dom';
 
 import PropTypes from 'prop-types';
 import Header from "./common/Header";
@@ -24,5 +25,4 @@ export const mapStateToProps = state => ({
   loading: state.ajaxCallsInProgress > 0,
 });
 
-// export default App;
-export default connect(mapStateToProps)(App);
+export default withRouter(connect(mapStateToProps)(App));
