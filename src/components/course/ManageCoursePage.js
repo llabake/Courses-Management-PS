@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import toastr from "toastr";
 import {
   bool,
   shape,
@@ -13,6 +14,7 @@ export class ManageCoursePage extends Component {
   state = {
     course: Object.assign({}, this.props.course),
     errors: {},
+    saving: false,
   };
 
   // eslint-disable-next-line consistent-return
@@ -31,10 +33,20 @@ export class ManageCoursePage extends Component {
     return this.setState({ course });
   };
 
+  redirect () {
+    this.setState({ saving: false });
+    toastr.success("Course saved successfully");
+    this.props.history.push('/courses');
+  }
   saveCourse = (event) => {
     event.preventDefault();
-    this.props.saveCourse(this.state.course);
-    this.props.history.push('/courses');
+    this.setState({ saving: true });
+    this.props.saveCourse(this.state.course)
+      .then(() => this.redirect())
+      .catch(error => {
+        toastr.error(error);
+        this.setState({ saving: false });
+      })
   };
 
   render() {
@@ -47,6 +59,7 @@ export class ManageCoursePage extends Component {
         allAuthors={authors}
         onChange={this.updateCourseState}
         onSave={this.saveCourse}
+        saving={this.state.saving}
       />
     );
   }
@@ -81,7 +94,7 @@ export const mapStateToProps = (state, { match: { params } }) => {
 };
 
 export const mapDispatchToProps = dispatch => ({
-  // createCourse: course => dispatch(loadCourses()),
+  loadCourses: () => dispatch(loadCourses()),
   saveCourse: course => dispatch(saveCourse(course)),
 });
 
