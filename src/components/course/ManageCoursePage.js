@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Prompt } from 'react-router-dom';
 import toastr from "toastr";
 import {
   bool,
@@ -15,6 +16,7 @@ export class ManageCoursePage extends Component {
     course: Object.assign({}, this.props.course),
     errors: {},
     saving: false,
+    isBlocking: false
   };
 
   // eslint-disable-next-line consistent-return
@@ -30,11 +32,14 @@ export class ManageCoursePage extends Component {
     const field = event.target.name;
     const { course } = this.state;
     course[field] = event.target.value;
-    return this.setState({ course });
+    return this.setState({ course, isBlocking: true, });
   };
 
   redirect() {
-    this.setState({ saving: false });
+    this.setState({
+      saving: false,
+      isBlocking: false,
+    });
     toastr.success("Course saved successfully");
     this.props.history.push('/courses');
   }
@@ -51,17 +56,23 @@ export class ManageCoursePage extends Component {
   };
 
   render() {
-    const { course, errors } = this.state;
+    const { course, errors, isBlocking } = this.state;
     const { authors } = this.props;
     return (
-      <CourseForm
-        course={course}
-        errors={errors}
-        allAuthors={authors}
-        onChange={this.updateCourseState}
-        onSave={this.saveCourse}
-        saving={this.state.saving}
-      />
+      <div>
+        <Prompt
+          when={isBlocking}
+          message={"Are you sure you want to go to leave the page"}
+        />
+        <CourseForm
+          course={course}
+          errors={errors}
+          allAuthors={authors}
+          onChange={this.updateCourseState}
+          onSave={this.saveCourse}
+          saving={this.state.saving}
+        />
+      </div>
     );
   }
 }

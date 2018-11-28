@@ -7,9 +7,10 @@ import Header from "./common/Header";
 
 class App extends Component {
   render() {
+    const { loading, courses } = this.props;
     return (
       <div className="container-fluid">
-        <Header loading={this.props.loading} />
+        <Header loading={loading} courses={courses} />
         {this.props.children}
       </div>
     );
@@ -19,10 +20,12 @@ class App extends Component {
 App.propTypes = {
   children: PropTypes.object.isRequired,
   loading: PropTypes.bool.isRequired,
+  courses: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 
 export const mapStateToProps = state => ({
   loading: state.ajaxCallsInProgress > 0,
+  courses: state.courses
 });
 
 export default withRouter(connect(mapStateToProps)(App));
