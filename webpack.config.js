@@ -16,12 +16,6 @@ const HtmlWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-  mode: 'development',
-  devtool: 'eval-source-map',
-  entry: [
-    'webpack-hot-middleware/client',
-    './src/index.js',
-  ],
   output: {
     path: __dirname + '/dist',
     filename: 'bundle.js',
@@ -30,7 +24,6 @@ module.exports = {
   plugins: [
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     HtmlWebpackPluginConfig
   ],
   module: {

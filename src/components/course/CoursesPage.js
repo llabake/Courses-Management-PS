@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import courseActions from '../../actions/courseActions';
+import toastr from "toastr";
+import { deleteCourse } from '../../actions/courseActions';
 import CourseList from './CourseList';
 
 class CoursesPage extends Component {
@@ -20,6 +21,14 @@ class CoursesPage extends Component {
     history.push('/course');
   };
 
+  deleteCourse = (courseId) => {
+    const { history } = this.props;
+    this.props.deleteCourse(courseId).then(() => {
+      toastr.success('Course deleted successfully');
+      history.push('/courses');
+    });
+  };
+
   render() {
     const { courses } = this.props;
     return (
@@ -31,7 +40,7 @@ class CoursesPage extends Component {
           className="btn btn-primary"
           onClick={this.redirectToAddCoursePage}
         />
-        <CourseList courses={courses} />
+        <CourseList courses={courses} onDelete={this.deleteCourse} />
       </div>
     );
   }
@@ -42,7 +51,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  createCourse: course => dispatch(courseActions(course)),
+  deleteCourse: course => dispatch(deleteCourse(course)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);
