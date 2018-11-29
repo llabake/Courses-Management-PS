@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom';
 import { bool } from "prop-types";
 import LoadingDots from "./LoadingDots";
 
-const Header = ({ loading }) => (
+const Header = ({ loading, courses }) => (
   <nav>
     <Link to="/" className="active">Home</Link>
     {' | '}
-    <Link to="/courses" className="active">Courses</Link>
+    <Link to="/courses" className="active">
+Courses
+      <span className="label label-primary">{loading ? '' : courses.length}</span>
+    </Link>
+    {' | '}
+    <Link to="/authors" className="active">Authors</Link>
     {' | '}
     <Link to="/about" className="active">About</Link>
     {loading && <LoadingDots interval={100} dots={20} />}

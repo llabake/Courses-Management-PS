@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Prompt } from 'react-router-dom';
 import toastr from "toastr";
 import {
   bool,
@@ -9,12 +10,15 @@ import {
 } from 'prop-types';
 import { saveCourse } from '../../actions/courseActions';
 import CourseForm from "./CourseForm";
+import { inputValidator } from "../../helpers";
 
 export class ManageCoursePage extends Component {
   state = {
     course: Object.assign({}, this.props.course),
     errors: {},
     saving: false,
+    isBlocking: false,
+    isValid: false,
   };
 
   // eslint-disable-next-line consistent-return
@@ -26,21 +30,34 @@ export class ManageCoursePage extends Component {
     }
   };
 
+  validate() {
+    const { errors, isValid } = inputValidator(this.state);
+    this.setState({ isValid, errors });
+    return isValid;
+  }
+
+
   updateCourseState = (event) => {
     const field = event.target.name;
     const { course } = this.state;
     course[field] = event.target.value;
-    return this.setState({ course });
+    return this.setState({ course, isBlocking: true });
   };
 
   redirect() {
-    this.setState({ saving: false });
+    this.setState({
+      saving: false,
+      isBlocking: false,
+    });
     toastr.success("Course saved successfully");
     this.props.history.push('/courses');
   }
 
   saveCourse = (event) => {
     event.preventDefault();
+    if (!this.validate()) {
+      return;
+    }
     this.setState({ saving: true });
     this.props.saveCourse(this.state.course)
       .then(() => this.redirect())
@@ -51,17 +68,23 @@ export class ManageCoursePage extends Component {
   };
 
   render() {
-    const { course, errors } = this.state;
+    const { course, errors, isBlocking } = this.state;
     const { authors } = this.props;
     return (
-      <CourseForm
-        course={course}
-        errors={errors}
-        allAuthors={authors}
-        onChange={this.updateCourseState}
-        onSave={this.saveCourse}
-        saving={this.state.saving}
-      />
+      <div>
+        <Prompt
+          when={isBlocking}
+          message="Are you sure you want to go to leave the page"
+        />
+        <CourseForm
+          course={course}
+          errors={errors}
+          allAuthors={authors}
+          onChange={this.updateCourseState}
+          onSave={this.saveCourse}
+          saving={this.state.saving}
+        />
+      </div>
     );
   }
 }
