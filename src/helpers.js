@@ -1,8 +1,8 @@
 export const sortCourses = (courses) => {
-  courses.sort((a, b) => {
-    if (a.title < b.title) {
+  courses.sort((firstCourse, secondCourse) => {
+    if (firstCourse.title < secondCourse.title) {
       return 1;
-    } if (a.title > b.title) {
+    } if (firstCourse.title > secondCourse.title) {
       return -1;
     } 
     return 0;
@@ -10,15 +10,64 @@ export const sortCourses = (courses) => {
   return courses;
 };
 
-export const paginationMeta = (table, page = 1, limit = 3) => {
-  const offset = (page - 1) * limit;
-  const temp = Object.assign([], table);
-  const result = temp.splice(offset, limit);
-  return {
-    page,
-    offset,
-    pageSize: result.length,
-    pageCount: Math.ceil(table.length / limit),
-    result
-  };
+const isCorrectTimeFormat = (str) => {
+  const re = /^[0-9]+(?:(:[0-5][0-9])){1,2}$/;
+  return re.test(str);
+};
+
+export const inputValidator = (formData) => {
+  console.log(formData, 'ololp');
+  const errors = {};
+  let isValid = true;
+
+  const {
+    course: {
+      title, category, authorId, length, 
+    },
+  } = formData;
+  if (title.length < 2) {
+    errors.title = 'Course title must be at least 2 characters.';
+  }
+  if (authorId.length < 1) {
+    errors.authorId = 'Author name must contain at least 4 characters';
+    isValid = false;
+  }
+  if (category.length < 1) {
+    errors.category = 'Category must contain at least 2 characters';
+  }
+  if (!isCorrectTimeFormat(length)) {
+    errors.length = `Length should only contains numbers and a colon in the format mm:ss`;
+  }
+
+  Object.keys(errors)
+    .map(key => errors[key]).forEach((error) => {
+      if (error.length) {
+        isValid = false;
+      }
+    });
+  return { errors, isValid };
+};
+
+export const authorInputValidator = (formData) => {
+  const errors = {};
+  let isValid = true;
+
+  const {
+    author: { firstName, lastName },
+  } = formData;
+  if (firstName.length < 2) {
+    errors.firstName = 'First name must be at least 2 characters.';
+  }
+  if (lastName.length < 2) {
+    errors.lastName = 'Last name must contain at least 2 characters';
+    isValid = false;
+  }
+
+  Object.keys(errors)
+    .map(key => errors[key]).forEach((error) => {
+      if (error.length) {
+        isValid = false;
+      }
+    });
+  return { errors, isValid };
 };

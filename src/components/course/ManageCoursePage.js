@@ -10,13 +10,15 @@ import {
 } from 'prop-types';
 import { saveCourse } from '../../actions/courseActions';
 import CourseForm from "./CourseForm";
+import { inputValidator } from "../../helpers";
 
 export class ManageCoursePage extends Component {
   state = {
     course: Object.assign({}, this.props.course),
     errors: {},
     saving: false,
-    isBlocking: false
+    isBlocking: false,
+    isValid: false,
   };
 
   // eslint-disable-next-line consistent-return
@@ -28,11 +30,18 @@ export class ManageCoursePage extends Component {
     }
   };
 
+  validate() {
+    const { errors, isValid } = inputValidator(this.state);
+    this.setState({ isValid, errors });
+    return isValid;
+  }
+
+
   updateCourseState = (event) => {
     const field = event.target.name;
     const { course } = this.state;
     course[field] = event.target.value;
-    return this.setState({ course, isBlocking: true, });
+    return this.setState({ course, isBlocking: true });
   };
 
   redirect() {
@@ -46,6 +55,9 @@ export class ManageCoursePage extends Component {
 
   saveCourse = (event) => {
     event.preventDefault();
+    if (!this.validate()) {
+      return;
+    }
     this.setState({ saving: true });
     this.props.saveCourse(this.state.course)
       .then(() => this.redirect())
@@ -62,7 +74,7 @@ export class ManageCoursePage extends Component {
       <div>
         <Prompt
           when={isBlocking}
-          message={"Are you sure you want to go to leave the page"}
+          message="Are you sure you want to go to leave the page"
         />
         <CourseForm
           course={course}

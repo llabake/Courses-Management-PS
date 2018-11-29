@@ -7,6 +7,8 @@ import AboutPage from "./components/about/AboutPage";
 import CoursesPage from "./components/course/CoursesPage";
 import ManageCoursePage from "./components/course/ManageCoursePage";
 import NotFound from "./components/NotFound";
+import AuthorsPage from "./components/authors/AuthorsPage";
+import ManageAuthorPage from "./components/authors/ManageAuthorPage";
 
 const Routes = () => (
   <BrowserRouter>
@@ -17,6 +19,9 @@ const Routes = () => (
         <Route exact path="/courses" component={CoursesPage} />
         <Route exact path="/course" component={ManageCoursePage} />
         <Route exact path="/course/:id" component={ManageCoursePage} />
+        <Route exact path="/authors" component={AuthorsPage} />
+        <Route exact path="/author" component={ManageAuthorPage} />
+        <Route exact path="/author/:id" component={ManageAuthorPage} />
         <Route component={NotFound} />
       </Switch>
     </App>

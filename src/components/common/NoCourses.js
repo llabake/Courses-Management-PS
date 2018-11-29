@@ -1,18 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const NoCourses = ({ text }) => {
-  return (
-    <div className="text-center">
-      <h4>
-        {text}
-      </h4>
-    </div>
-  )
-};
+const NoCourses = ({ text }) => (
+  <div className="text-center">
+    <h4>
+      {text}
+    </h4>
+  </div>
+);
 
 NoCourses.propTypes = {
-  text: PropTypes.string
+  text: PropTypes.string.isRequired,
 };
 
 export default NoCourses;

@@ -43,8 +43,10 @@ class CoursesPage extends Component {
           onClick={this.redirectToAddCoursePage}
         />
         { !loading && !courses.length
-          ? <NoCourses
-              text={'There are no courses now. Click the Add Course button to add courses'} />
+          ? (
+            <NoCourses
+              text="There are no courses now. Click the Add Course button to add courses" />
+          )
           : <CourseList courses={courses} onDelete={this.deleteCourse} />}
       </div>
     );

@@ -25,7 +25,7 @@ App.propTypes = {
 
 export const mapStateToProps = state => ({
   loading: state.ajaxCallsInProgress > 0,
-  courses: state.courses
+  courses: state.courses,
 });
 
 export default withRouter(connect(mapStateToProps)(App));
