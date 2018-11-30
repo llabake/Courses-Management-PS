@@ -21,7 +21,7 @@ class AuthorsPage extends Component {
   };
 
   authorCourseExist = (courses, authorId) => {
-    courses.some(course => (course.authorId === authorId));
+    return courses.some(course => (course.authorId === authorId));
   };
 
   deleteAuthor = (authorId) => {
