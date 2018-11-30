@@ -1,8 +1,8 @@
 export const sortCourses = (courses) => {
   courses.sort((firstCourse, secondCourse) => {
-    if (firstCourse.title < secondCourse.title) {
+    if (firstCourse.title > secondCourse.title) {
       return 1;
-    } if (firstCourse.title > secondCourse.title) {
+    } if (firstCourse.title < secondCourse.title) {
       return -1;
     } 
     return 0;
