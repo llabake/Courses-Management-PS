@@ -62,5 +62,13 @@ export default {
     authorId: "cory-house",
     length: "3:10",
     category: "Software Practices",
-  }
+  },
+  courseToBeUpdated: {
+    id: "career-reboot-for-developer-mind",
+    title: "Becoming an Outlier: Reprogramming the Developer Mind",
+    watchHref: "http://www.pluralsight.com/courses/career-reboot-for-developer-mind",
+    authorId: "cory-house",
+    length: "2:30",
+    category: "Technology",
+  },
 }

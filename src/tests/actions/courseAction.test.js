@@ -6,8 +6,6 @@ import * as types from '../../actions/actionTypes';
 import * as actions from  '../../actions/courseActions';
 import { courses } from "../../api/mockCourseApi";
 import courseMock from '../mocks/courseMock';
-import authorMock from "../mocks/authorMock";
-import {authors} from "../../api/mockAuthorApi";
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
@@ -59,7 +57,6 @@ describe('Course Action test', () => {
     const store = mockStore({});
     return store.dispatch(actions.saveCourse(courseMock.createdCourse))
       .then(() => {
-        console.log(store.getActions(), 'plplfpfl')
         expect(store.getActions()).toEqual(expectedAction);
       })
   });
