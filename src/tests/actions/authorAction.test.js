@@ -15,13 +15,13 @@ describe('Author action test', () => {
     const expectedAction = [
       { type: types.BEGIN_AJAX_CALL },
       {
-      type: types.LOAD_AUTHORS_SUCCESS,
-      authors,
-    }];
+        type: types.LOAD_AUTHORS_SUCCESS,
+        authors,
+      }];
     const store = mockStore({});
     return store.dispatch(actions.loadAuthors()).then(() => {
       expect(store.getActions()).toEqual(expectedAction);
-    })
+    });
   });
   it('Updates an author detail', () => {
     const expectedAction = [
@@ -29,19 +29,19 @@ describe('Author action test', () => {
       {
         type: types.UPDATE_AUTHOR_SUCCESS,
         author: authorMock.updatedAuthor,
-      }
+      },
     ];
     const store = mockStore({
       authors: [{
         id: 'cory-house',
         firstName: 'Cory',
-        lastName: 'House'
-      }]
+        lastName: 'House',
+      }],
     });
     return store.dispatch(actions.saveAuthor(authorMock.updatedAuthor))
       .then(() => {
         expect(store.getActions()).toEqual(expectedAction);
-    })
+      });
   });
   it('Createss an author successfully', () => {
     const expectedAction = [
@@ -49,25 +49,25 @@ describe('Author action test', () => {
       {
         type: types.CREATE_AUTHOR_SUCCESS,
         author: authorMock.createdAuthorWithId,
-      }
+      },
     ];
     const store = mockStore({});
     return store.dispatch(actions.saveAuthor(authorMock.createdAuthor))
       .then(() => {
         expect(store.getActions()).toEqual(expectedAction);
-    })
+      });
   });
   it('Deletes an author successfully', () => {
     const expectedAction = [
       {
         type: types.DELETE_AUTHOR_SUCCESS,
         authorId: authors[2].id,
-      }
+      },
     ];
     const store = mockStore({});
     return store.dispatch(actions.deleteAuthor(authors[2].id))
       .then(() => {
         expect(store.getActions()).toEqual(expectedAction);
-    })
+      });
   });
 });

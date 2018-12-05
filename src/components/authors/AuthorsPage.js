@@ -20,9 +20,7 @@ class AuthorsPage extends Component {
     history.push('/author');
   };
 
-  authorCourseExist = (courses, authorId) => {
-    return courses.some(course => (course.authorId === authorId));
-  };
+  authorCourseExist = (courses, authorId) => courses.some(course => (course.authorId === authorId));
 
   deleteAuthor = (authorId) => {
     const { history, courses } = this.props;

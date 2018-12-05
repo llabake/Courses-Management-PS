@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SelectInput /> Select input field component show error when they occur 1`] = `
+<SelectInput
+  defaultOption="Select Author"
+  error={
+    Array [
+      "Author name must contain at least 4 characters",
+    ]
+  }
+  label="Author"
+  name="authorId"
+  onChange={[MockFunction]}
+  options={
+    Array [
+      Object {
+        "text": "",
+        "value": "",
+      },
+    ]
+  }
+  placeholder=""
+  value=""
+>
+  <div
+    className="form-group"
+  >
+    <label
+      htmlFor="authorId"
+    >
+      Author
+    </label>
+    <div
+      className="alert alert-danger"
+    >
+      Author name must contain at least 4 characters
+    </div>
+    <div
+      className="field"
+    >
+      <select
+        className="form-control"
+        name="authorId"
+        onChange={[MockFunction]}
+        value=""
+      >
+        <option
+          value=""
+        >
+          Select Author
+        </option>
+        <option
+          key=""
+          value=""
+        />
+      </select>
+    </div>
+  </div>
+</SelectInput>
+`;
+
+exports[`<SelectInput /> field component renders correctly 1`] = `
+<SelectInput
+  defaultOption=""
+  error={Array []}
+  label=""
+  name=""
+  onChange={[MockFunction]}
+  options={
+    Array [
+      Object {
+        "text": "",
+        "value": "",
+      },
+    ]
+  }
+  placeholder=""
+  value=""
+>
+  <div
+    className="form-group"
+  >
+    <label
+      htmlFor=""
+    />
+    <div
+      className="alert alert-danger"
+    />
+    <div
+      className="field"
+    >
+      <select
+        className="form-control"
+        name=""
+        onChange={[MockFunction]}
+        value=""
+      >
+        <option
+          value=""
+        />
+        <option
+          key=""
+          value=""
+        />
+      </select>
+    </div>
+  </div>
+</SelectInput>
+`;

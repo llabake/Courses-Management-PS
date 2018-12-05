@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header/> renders correctly 1`] = `
+<nav>
+  <Link
+    className="active"
+    replace={false}
+    to="/"
+  >
+    Home
+  </Link>
+   | 
+  <Link
+    className="active"
+    replace={false}
+    to="/courses"
+  >
+    Courses
+    <span
+      className="label label-primary"
+    >
+      0
+    </span>
+  </Link>
+   | 
+  <Link
+    className="active"
+    replace={false}
+    to="/authors"
+  >
+    Authors
+  </Link>
+   | 
+  <Link
+    className="active"
+    replace={false}
+    to="/about"
+  >
+    About
+  </Link>
+</nav>
+`;

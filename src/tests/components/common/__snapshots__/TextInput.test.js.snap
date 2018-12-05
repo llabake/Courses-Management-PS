@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TextInput /> Text input field component show error when they occur 1`] = `
+<TextInput
+  error={
+    Array [
+      "Course title must be at least 2 characters",
+    ]
+  }
+  label="Title"
+  name="title"
+  onChange={[MockFunction]}
+  placeholder=""
+  value="e"
+>
+  <div
+    className="form-group has-error"
+  >
+    <label
+      htmlFor="title"
+    >
+      Title
+    </label>
+    <div
+      className="alert alert-danger"
+    >
+      Course title must be at least 2 characters
+    </div>
+    <div
+      className="field"
+    >
+      <input
+        className="form-control"
+        name="title"
+        onChange={[MockFunction]}
+        placeholder=""
+        type="text"
+        value="e"
+      />
+    </div>
+  </div>
+</TextInput>
+`;
+
+exports[`<TextInput /> field component renders correctly 1`] = `
+<TextInput
+  error={Array []}
+  label=""
+  name=""
+  onChange={[MockFunction]}
+  placeholder=""
+  value=""
+>
+  <div
+    className="form-group"
+  >
+    <label
+      htmlFor=""
+    />
+    <div
+      className="alert alert-danger"
+    />
+    <div
+      className="field"
+    >
+      <input
+        className="form-control"
+        name=""
+        onChange={[MockFunction]}
+        placeholder=""
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+</TextInput>
+`;

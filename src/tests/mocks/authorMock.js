@@ -30,4 +30,4 @@ export default {
     firstName: 'author_one-two',
     lastName: 'mock-author-two',
   },
-}
+};

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotFound /> should render correctly 1`] = `
+<div>
+  <div
+    className="jumbotron"
+  >
+    <h3
+      className="text-center"
+      id="text"
+    >
+      This is embarrassing, something is missing......
+    </h3>
+    <p
+      className="text-center"
+    >
+      <Link
+        replace={false}
+        to="/"
+      >
+        Home
+      </Link>
+    </p>
+  </div>
+</div>
+`;

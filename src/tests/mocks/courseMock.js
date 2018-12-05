@@ -39,7 +39,7 @@ export default {
       authorId: "daniel-stern",
       length: "5:10",
       category: "React",
-    }
+    },
   ],
   updatedCourse: {
     id: "career-reboot-for-developer-mind",
@@ -71,4 +71,4 @@ export default {
     length: "2:30",
     category: "Technology",
   },
-}
+};
