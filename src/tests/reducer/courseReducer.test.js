@@ -12,7 +12,7 @@ describe('Course reducer', () => {
   it('should load all courses', () => {
     const loadAllCoursesAction = {
       type: types.LOAD_COURSES_SUCCESS,
-      courses: courseMock.courses
+      courses: courseMock.courses,
     };
     expect(reducer([], loadAllCoursesAction))
       .toEqual(courseMock.courses);
@@ -20,7 +20,7 @@ describe('Course reducer', () => {
   it('should create a course', () => {
     const createCourses = {
       type: types.CREATE_COURSE_SUCCESS,
-      course: courseMock.createdCourseWithId
+      course: courseMock.createdCourseWithId,
     };
     expect(reducer([], createCourses))
       .toEqual([courseMock.createdCourseWithId]);
@@ -28,15 +28,15 @@ describe('Course reducer', () => {
   it('should update a course successfully', () => {
     const updateCourseAction = {
       type: types.UPDATE_COURSE_SUCCESS,
-      course: courseMock.updatedCourse
+      course: courseMock.updatedCourse,
     };
-    expect(reducer([ courseMock.courseToBeUpdated ], updateCourseAction))
+    expect(reducer([courseMock.courseToBeUpdated], updateCourseAction))
       .toEqual([courseMock.updatedCourse]);
   });
   it('should delete a course successfully', () => {
     const deleteCourseAction = {
       type: types.DELETE_COURSE_SUCCESS,
-      courseId: courseMock.createdCourseWithId.id
+      courseId: courseMock.createdCourseWithId.id,
     };
     expect(reducer([courseMock.createdCourseWithId], deleteCourseAction))
       .toEqual([]);
