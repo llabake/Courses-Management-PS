@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ManageAuthorPage renders correctly 1`] = `
+<div>
+  <Prompt
+    message="Are you sure you want to go to leave the page"
+    when={false}
+  />
+  <AuthorForm
+    author={Object {}}
+    errors={Object {}}
+    onChange={[Function]}
+    onSave={[Function]}
+    saving={false}
+  />
+</div>
+`;

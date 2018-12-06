@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseForm/> should render correctly 1`] = `
+<form>
+  <h1>
+    Manage Course
+  </h1>
+  <TextInput
+    label="Title"
+    name="title"
+    onChange={[MockFunction]}
+  />
+  <SelectInput
+    defaultOption="Select Author"
+    label="Author"
+    name="authorId"
+    onChange={[MockFunction]}
+  />
+  <TextInput
+    label="Category"
+    name="category"
+    onChange={[MockFunction]}
+  />
+  <TextInput
+    error={0}
+    label="Length"
+    name="length"
+    onChange={[MockFunction]}
+  />
+  <input
+    className="btn btn-primary"
+    disabled={false}
+    onClick={[MockFunction]}
+    type="submit"
+    value="Save"
+  />
+</form>
+`;

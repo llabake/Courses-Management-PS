@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoadingDots /> renders correctly 1`] = `
+<span
+  dots={4}
+  interval={300}
+>
+  .
+   
+</span>
+`;

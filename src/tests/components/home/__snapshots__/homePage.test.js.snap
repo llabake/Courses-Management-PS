@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> renders correctly 1`] = `
+<div
+  className="jumbotron"
+>
+  <h1>
+    Course Administration.
+  </h1>
+  <p>
+    React Redux Restacking Courses 
+  </p>
+  <Link
+    className="btn btn-primary btn-lg"
+    replace={false}
+    to="about"
+  >
+    Learn More
+  </Link>
+</div>
+`;

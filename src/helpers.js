@@ -16,7 +16,6 @@ const isCorrectTimeFormat = (str) => {
 };
 
 export const inputValidator = (formData) => {
-  console.log(formData, 'ololp');
   const errors = {};
   let isValid = true;
 

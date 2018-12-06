@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthorListRow /> renders correctly 1`] = `
+<tr>
+  <td>
+    <Link
+      replace={false}
+      to="/author/sardaunan-happygirl"
+    >
+      sardaunan-happygirl
+    </Link>
+  </td>
+  <td>
+    Sardaunan
+     
+    Happygirl
+  </td>
+  <td
+    className="btn btn-xs btn-danger"
+    onClick={[Function]}
+  >
+    Delete
+  </td>
+</tr>
+`;

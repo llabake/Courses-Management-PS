@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CoursePage renders correctly 1`] = `
+<div>
+  <h1>
+    Courses
+  </h1>
+  <input
+    className="btn btn-primary"
+    onClick={[Function]}
+    type="submit"
+    value="Add Course"
+  />
+  <NoCourses
+    text="There are no courses now. Click the Add Course button to add courses"
+  />
+</div>
+`;

@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseListRow /> renders correctly 1`] = `
+<tr>
+  <td>
+    <a
+      href="/course/http://www.pluralsight.com/courses/Learn-Ruby:-Write-Great-Ruby-Code"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Watch
+    </a>
+  </td>
+  <td>
+    <Link
+      replace={false}
+      to="/course/Learn-Ruby:-Write-Great-Ruby-Code"
+    >
+      Learn Ruby: Write Great Ruby Code
+    </Link>
+  </td>
+  <td>
+    cory-house
+  </td>
+  <td>
+    Software Practices
+  </td>
+  <td>
+    3:10
+  </td>
+  <td
+    className="btn btn-xs btn-danger"
+    onClick={[Function]}
+  >
+    Delete
+  </td>
+</tr>
+`;

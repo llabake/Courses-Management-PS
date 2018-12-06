@@ -13,18 +13,21 @@
     "test": "mocha --reporter spec tools/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch",
     "build": "webpack --config webpack.config.prod.js",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "test:client": "jest -u --coverage"
   },
   "dependencies": {
     "babel-polyfill": "6.8.0",
     "bootstrap": "3.3.6",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
     "express": "4.13.4",
     "jquery": "2.2.3",
     "path": "^0.12.7",
     "prop-types": "^15.6.2",
-    "react": "15.0.2",
-    "react-dom": "15.0.2",
-    "react-redux": "4.4.5",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^6.0.0",
     "react-router": "2.4.0",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "4.0.4",
@@ -43,6 +46,7 @@
     "@babel/register": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^7.1.5",
     "babel-plugin-react-display-name": "2.0.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -55,7 +59,7 @@
     "cross-env": "1.0.7",
     "css-loader": "^1.0.1",
     "dotenv-webpack": "^1.5.7",
-    "enzyme": "2.2.0",
+    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.8.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
@@ -68,16 +72,17 @@
     "file-loader": "^2.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jest": "^23.6.0",
     "jsdom": "8.5.0",
     "mocha": "2.4.5",
     "nock": "8.0.0",
     "node-sass": "^4.9.4",
     "npm-run-all": "1.8.0",
     "open": "0.0.5",
-    "react-addons-test-utils": "15.0.2",
     "react-hot-loader": "^4.3.11",
     "redux-immutable-state-invariant": "1.2.3",
     "redux-mock-store": "^1.5.3",
+    "regenerator-runtime": "^0.13.1",
     "rimraf": "2.5.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
@@ -101,5 +106,38 @@
   "bugs": {
     "url": "https://github.com/llabake/Courses-Management-PS/issues"
   },
-  "homepage": "https://github.com/llabake/Courses-Management-PS#readme"
+  "homepage": "https://github.com/llabake/Courses-Management-PS#readme",
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/src/tests/jestSetup.js",
+    "coverageThreshold": {
+      "rootDir": "./",
+      "verbose": true,
+      "collectCoverage": true,
+      "collectCoverageFrom": [
+        "./**/*.js"
+      ],
+      "coverageDirectory": "<rootDir>/coverage",
+      "moduleFileExtensions": [
+        "js"
+      ],
+      "global": {
+        "branches": 70,
+        "functions": 85,
+        "lines": 85,
+        "statements": 85
+      }
+    },
+    "transform": {
+      "^.+\\.jsx$": "babel-jest",
+      "^.+\\.js$": "babel-jest"
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text"
+    ]
+  }
 }

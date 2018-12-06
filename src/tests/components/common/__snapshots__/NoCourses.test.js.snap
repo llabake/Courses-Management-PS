@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NoCourses /> mounts correctly 1`] = `
+<div
+  className="text-center"
+>
+  <h4>
+    what
+  </h4>
+</div>
+`;

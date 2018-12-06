@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseList /> renders correctly 1`] = `
+<table
+  className="table"
+>
+  <thead>
+    <tr>
+      <th>
+         
+      </th>
+      <th>
+        Title
+      </th>
+      <th>
+        Author
+      </th>
+      <th>
+        Category
+      </th>
+      <th>
+        Length
+      </th>
+      <th>
+        Delete
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <CourseListRow
+      course={
+        Object {
+          "authorId": "cory-house",
+          "category": "JavaScript",
+          "id": "react-flux-building-applications",
+          "length": "5:08",
+          "title": "Building Applications in React and Flux",
+          "watchHref": "http://www.pluralsight.com/courses/react-flux-building-applications",
+        }
+      }
+      key="react-flux-building-applications"
+      onDelete={[MockFunction]}
+    />
+    <CourseListRow
+      course={
+        Object {
+          "authorId": "cory-house",
+          "category": "Software Practices",
+          "id": "clean-code",
+          "length": "3:10",
+          "title": "Clean Code: Writing Code for Humans",
+          "watchHref": "http://www.pluralsight.com/courses/writing-clean-code-humans",
+        }
+      }
+      key="clean-code"
+      onDelete={[MockFunction]}
+    />
+    <CourseListRow
+      course={
+        Object {
+          "authorId": "cory-house",
+          "category": "Software Architecture",
+          "id": "architecture",
+          "length": "2:52",
+          "title": "Architecting Applications for the Real World",
+          "watchHref": "http://www.pluralsight.com/courses/architecting-applications-dotnet",
+        }
+      }
+      key="architecture"
+      onDelete={[MockFunction]}
+    />
+    <CourseListRow
+      course={
+        Object {
+          "authorId": "cory-house",
+          "category": "Career",
+          "id": "career-reboot-for-developer-mind",
+          "length": "2:30",
+          "title": "Becoming an Outlier: Reprogramming the Developer Mind",
+          "watchHref": "http://www.pluralsight.com/courses/career-reboot-for-developer-mind",
+        }
+      }
+      key="career-reboot-for-developer-mind"
+      onDelete={[MockFunction]}
+    />
+    <CourseListRow
+      course={
+        Object {
+          "authorId": "daniel-stern",
+          "category": "React",
+          "id": "testing-react-applications-with-jest",
+          "length": "5:10",
+          "title": "Testing React Application With Jest",
+          "watchHref": "http://www.pluralsight.com/courses/testing-react-applications-with-jest",
+        }
+      }
+      key="testing-react-applications-with-jest"
+      onDelete={[MockFunction]}
+    />
+  </tbody>
+</table>
+`;
