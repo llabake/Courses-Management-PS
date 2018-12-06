@@ -6,7 +6,7 @@ export default {
       lastName: 'mock-author',
     },
     {
-      id: 'mock-author-two',
+      id: 'cory-house',
       firstName: 'author_two',
       lastName: 'mock-author-two',
     },

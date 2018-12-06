@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthorForm/> should render correctly 1`] = `
+<form>
+  <h1>
+    Manage Authors
+  </h1>
+  <TextInput
+    label="First Name"
+    name="firstName"
+    onChange={[MockFunction]}
+  />
+  <TextInput
+    label="Last Name"
+    name="lastName"
+    onChange={[MockFunction]}
+  />
+  <input
+    className="btn btn-primary"
+    disabled={false}
+    onClick={[MockFunction]}
+    type="submit"
+    value="Save"
+  />
+</form>
+`;

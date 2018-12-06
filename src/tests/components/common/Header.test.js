@@ -5,10 +5,10 @@ import Header from "../../../components/common/Header";
 describe('<Header/>', () => {
   const props = {
     loading: false,
-    courses: []
+    courses: [],
   };
-  const wrapper = shallow(<Header {...props}/>);
+  const wrapper = shallow(<Header {...props} />);
   it('renders correctly', () => {
     expect(wrapper).toMatchSnapshot();
-  })
+  });
 });

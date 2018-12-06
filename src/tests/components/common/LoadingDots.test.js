@@ -6,9 +6,9 @@ describe('<LoadingDots />', () => {
   it('renders correctly', () => {
     const props = {
       interval: 300,
-      dots: 4
+      dots: 4,
     };
-    const wrapper = shallow(<LoadingDots {...props}/>);
+    const wrapper = shallow(<LoadingDots {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

@@ -7,10 +7,10 @@ import CourseList from './CourseList';
 import { sortCourses } from "../../helpers";
 import NoCourses from "../common/NoCourses";
 
-class CoursesPage extends Component {
-  static courseRow(course, index) {
-    return <div key={index}>{course.title}</div>;
-  }
+export class CoursesPage extends Component {
+  // static courseRow(course, index) {
+  //   return <div key={index}>{course.title}</div>;
+  // }
 
   state = {
     course: {
@@ -55,6 +55,7 @@ class CoursesPage extends Component {
 
 export const mapStateToProps = (state) => {
   const { courses } = state;
+  console.log(state, 'plpl');
   sortCourses(courses);
   return {
     courses,
@@ -64,7 +65,7 @@ export const mapStateToProps = (state) => {
 
 
 export const mapDispatchToProps = dispatch => ({
-  deleteCourse: course => dispatch(deleteCourse(course)),
+  deleteCourse: courseId => dispatch(deleteCourse(courseId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CoursesPage);

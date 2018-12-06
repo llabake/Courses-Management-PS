@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AuthorsPage renders correctly 1`] = `
+<div>
+  <h1>
+    Authors
+  </h1>
+  <input
+    className="btn btn-primary"
+    onClick={[Function]}
+    type="submit"
+    value="Add Author"
+  />
+  <NoCourses
+    text="There are no Authors now. Click the Add Author button to add an author"
+  />
+</div>
+`;

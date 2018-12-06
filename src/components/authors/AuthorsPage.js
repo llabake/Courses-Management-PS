@@ -6,10 +6,10 @@ import NoCourses from "../common/NoCourses";
 import AuthorList from "./AuthorList";
 import { loadAuthors, deleteAuthor } from "../../actions/authorActions";
 
-class AuthorsPage extends Component {
-  static authorRow(author, index) {
-    return <div key={index}>{author.id}</div>;
-  }
+export class AuthorsPage extends Component {
+  // static authorRow(author, index) {
+  //   return <div key={index}>{author.id}</div>;
+  // }
 
   state = {
     author: {},
@@ -69,7 +69,7 @@ export const mapStateToProps = state => ({
 });
 
 export const mapDispatchToProps = dispatch => ({
-  deleteAuthor: author => dispatch(deleteAuthor(author)),
+  deleteAuthor: authorId => dispatch(deleteAuthor(authorId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthorsPage);
