@@ -80,14 +80,6 @@ describe('<ManageAuthorPage', () => {
         value: 'well well',
       },
     };
-    // wrapper.setState({
-    //   course: {
-    //     title: 'my course title',
-    //     length: '07:10',
-    //     authorId: 'my author',
-    //     category: 'my category',
-    //   }
-    // });
     wrapper.instance().updateAuthorState(event);
     expect(spy).toHaveBeenCalled();
   });

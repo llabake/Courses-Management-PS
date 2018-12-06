@@ -19,4 +19,5 @@ Courses-Management-PS is an applications that manages the tutorial on plural sig
 - Install all dependencies with `npm install`
 - Start the server with the command `npm run start:dev`
 - Visit `localhost:3000` on your browser
+- Run test with the command `npm run test:client`
 

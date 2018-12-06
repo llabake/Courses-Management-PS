@@ -86,8 +86,4 @@ describe('<CoursePage', () => {
     deleteCourse();
     expect(dispatch).toHaveBeenCalled();
   });
-  // xit('mapStateToProps', () => {
-  //   expect(mapStateToProps({})).toHaveProperty('loading');
-  //   expect(mapStateToProps({ courses: courseMock.courses })).toHaveProperty('courses');
-  // });
 });
