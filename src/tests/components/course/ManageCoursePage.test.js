@@ -50,7 +50,6 @@ describe('<ManageCoursePage', () => {
       }),
     };
     const wrapper = shallow(<ManageCoursePage {...props} />);
-    console.log(wrapper.debug(), 'sebi');
     const spy = jest.spyOn(wrapper.instance(), 'saveCourse');
     wrapper.setState({
       course: {
